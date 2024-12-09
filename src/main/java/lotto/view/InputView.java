@@ -26,4 +26,8 @@ public class InputView {
     public void printBonusNumbersInputGuideMessage() {
         System.out.println(BONUS_NUMBER_INPUT_GUIDE_MESSAGE);
     }
+
+    public String getBonusNumbers() {
+        return Console.readLine();
+    }
 }
