@@ -1,9 +1,12 @@
 package lotto.model;
 
+import static lotto.ExceptionMessage.LOTTO_NUMBERS_DUPLICATE_EXCEPTION;
 import static lotto.ExceptionMessage.LOTTO_NUMBERS_RANGE_EXCEPTION;
 import static lotto.ExceptionMessage.LOTTO_NUMBERS_SIZE_EXCEPTION;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -28,5 +31,12 @@ public class LottoTest {
         assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 5, 6, 7)))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(LOTTO_NUMBERS_SIZE_EXCEPTION.message);
+    }
+
+    @Test
+    void 로또_번호에_중복이_존재한다면_예외를_발생시킨다() {
+        assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 6, 6)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(LOTTO_NUMBERS_DUPLICATE_EXCEPTION.message);
     }
 }
