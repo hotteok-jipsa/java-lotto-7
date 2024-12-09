@@ -5,8 +5,6 @@ import static lotto.ExceptionMessage.LOTTO_NUMBERS_RANGE_EXCEPTION;
 import static lotto.ExceptionMessage.LOTTO_NUMBERS_SIZE_EXCEPTION;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
