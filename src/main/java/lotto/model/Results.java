@@ -4,13 +4,13 @@ import java.util.EnumMap;
 import java.util.List;
 import lotto.dto.LottoDto;
 
-public class ResultCalculator {
+public class Results {
     private final EnumMap<Result, Integer> results = new EnumMap<>(Result.class);
 
     private final List<Integer> winningNumbers;
     private final int bonusNumber;
 
-    public ResultCalculator(final WinningNumbers winningNumbers, final BonusNumber bonusNumber) {
+    public Results(final WinningNumbers winningNumbers, final BonusNumber bonusNumber) {
         this.winningNumbers = winningNumbers.getWinningNumbers();
         this.bonusNumber = bonusNumber.getBonusNumber();
     }
