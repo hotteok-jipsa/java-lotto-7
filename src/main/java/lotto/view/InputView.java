@@ -17,4 +17,8 @@ public class InputView {
     public void printWinningNumbersInputGuideMessage() {
         System.out.println(WINNING_NUMBERS_INPUT_GUIDE_MESSAGE);
     }
+
+    public String getWinningNumbers() {
+        return Console.readLine();
+    }
 }
