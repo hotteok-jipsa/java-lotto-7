@@ -4,6 +4,7 @@ import static lotto.ExceptionMessage.LOTTO_NUMBERS_DUPLICATE_EXCEPTION;
 import static lotto.ExceptionMessage.LOTTO_NUMBERS_RANGE_EXCEPTION;
 import static lotto.ExceptionMessage.LOTTO_NUMBERS_SIZE_EXCEPTION;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Lotto {
     }
 
     public LottoDto getLottoDto() {
-        return new LottoDto(Collections.unmodifiableList(numbers));
+        return new LottoDto(new ArrayList<>(numbers));
     }
 
     private void validateSize(List<Integer> numbers) {
