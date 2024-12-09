@@ -4,6 +4,7 @@ import static lotto.ExceptionMessage.WINNING_NUMBERS_DUPLICATE_EXCEPTION;
 import static lotto.ExceptionMessage.WINNING_NUMBERS_RANGE_EXCEPTION;
 import static lotto.ExceptionMessage.WINNING_NUMBERS_SIZE_EXCEPTION;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,6 +17,10 @@ public class WinningNumbers {
         validateRange(numbers);
         validateDuplicate(numbers);
         this.numbers = numbers;
+    }
+
+    public List<Integer> getWinningNumbers() {
+        return Collections.unmodifiableList(numbers);
     }
 
     private void validateSize(List<Integer> numbers) {
