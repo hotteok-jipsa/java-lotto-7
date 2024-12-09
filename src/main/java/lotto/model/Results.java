@@ -1,5 +1,6 @@
 package lotto.model;
 
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import lotto.dto.LottoDto;
@@ -19,6 +20,10 @@ public class Results {
         for (LottoDto lottoDto : purchasedLottos.getLottoDtos()) {
             getResult(lottoDto.Lotto());
         }
+    }
+
+    public EnumMap<Result, Integer> getResults() {
+        return results;
     }
 
     private void getResult(List<Integer> lottoNumbers) {
