@@ -8,6 +8,7 @@ public enum ExceptionMessage {
     LOTTO_NUMBERS_RANGE_EXCEPTION("로또 번호는 1~45 범위어야 합니다."),
     LOTTO_NUMBERS_DUPLICATE_EXCEPTION("로또 번호는 중복이 존재할 수 없습니다."),
 
+    WINNING_NUMBERS_NOT_NUMBER_EXCEPTION("당첨번호는 숫자타입이어야 합니다."),
     WINNING_NUMBERS_SIZE_EXCEPTION("당첨 번호는 6개여야 합니다."),
     WINNING_NUMBERS_RANGE_EXCEPTION("당첨 번호는 1~45 범위어야 합니다."),
     WINNING_NUMBERS_DUPLICATE_EXCEPTION("당첨 번호는 중복이 존재할 수 없습니다.");
