@@ -1,20 +1,30 @@
 package lotto.model;
 
+import static lotto.ExceptionMessage.LOTTO_NUMBERS_RANGE_EXCEPTION;
+import static lotto.ExceptionMessage.LOTTO_NUMBERS_SIZE_EXCEPTION;
+
 import java.util.List;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        validate(numbers);
+        validateSize(numbers);
+        validateRange(numbers);
         this.numbers = numbers;
     }
 
-    private void validate(List<Integer> numbers) {
+    private void validateSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
-            throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
+            throw new IllegalArgumentException(LOTTO_NUMBERS_SIZE_EXCEPTION.message);
         }
     }
 
-    // TODO: 추가 기능 구현
+    private void validateRange(List<Integer> numbers) {
+        for(int number : numbers) {
+            if(number < 1 || number > 45) {
+                throw new IllegalArgumentException(LOTTO_NUMBERS_RANGE_EXCEPTION.message);
+            }
+         }
+    }
 }
