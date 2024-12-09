@@ -12,7 +12,7 @@ public class Profit {
     }
 
     public double getProfitRate(PurchaseAmount purchaseAmount) {
-        return (double)profit / purchaseAmount.getPurchaseAmount();
+        return (double)profit / purchaseAmount.getPurchaseAmount() * 100;
     }
 
     private long getProfit(Map<Result, Integer> results) {

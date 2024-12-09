@@ -21,8 +21,8 @@ public enum Result {
     }
 
     public static Result from(int winningNumber, boolean bonusNumber) {
-        if(winningNumber == 5 && !bonusNumber) {
-            return THIRD;
+        if(winningNumber == 5 && bonusNumber) {
+            return SECOND;
         }
         for(Result result : Result.values()) {
             if(result.winningNumber == winningNumber) {

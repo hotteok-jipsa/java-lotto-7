@@ -14,7 +14,7 @@ public class OutputView {
     private static final String WINNING_RESULT_MESSAGE_FORM = "%d개 일치 (%,d원) - %d개\n";
     private static final String SECOND_RANK_WINNING_RESULT_MESSAGE_FORM = "%d개 일치, 보너스 볼 일치 (%,d원) - %d개\n";
 
-    private static final String PROFIT_RATE_MESSAGE_FORM = "총 수익률은 %.2f입니다.\n";
+    private static final String PROFIT_RATE_MESSAGE_FORM = "총 수익률은 %.1f%%입니다.\n";
 
     public void printPurchaseLottoMessage(int purchaseCount) {
         System.out.printf(PURCHASE_LOTTO_MESSAGE_FORM, purchaseCount);
