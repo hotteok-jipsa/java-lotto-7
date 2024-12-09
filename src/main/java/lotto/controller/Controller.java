@@ -36,9 +36,9 @@ public class Controller {
 
     private PurchaseAmount getPurchaseAmount() {
         inputView.printPurchaseAmountInputGuideMessage();
-        String rawPurchaseAmount = inputView.getPurchaseAmount();
         while (true) {
             try {
+                String rawPurchaseAmount = inputView.getPurchaseAmount();
                 long purchaseAmount = inputValidator.validatePurchaseAmountIsNumber(rawPurchaseAmount);
                 return new PurchaseAmount(purchaseAmount);
             } catch (IllegalArgumentException e) {
@@ -64,9 +64,9 @@ public class Controller {
 
     private WinningNumbers getWinningNumbers() {
         inputView.printWinningNumbersInputGuideMessage();
-        String rawWinningNumbers = inputView.getWinningNumbers();
         while (true) {
             try {
+                String rawWinningNumbers = inputView.getWinningNumbers();
                 List<Integer> winningNumbers = inputValidator.validateRawWinningNumbers(rawWinningNumbers);
                 return new WinningNumbers(winningNumbers);
             } catch (IllegalArgumentException e) {
@@ -77,9 +77,9 @@ public class Controller {
 
     private BonusNumber getBonusNumber(WinningNumbers winningNumbers) {
         inputView.printBonusNumbersInputGuideMessage();
-        String rawBonusNumber = inputView.getBonusNumbers();
         while (true) {
             try {
+                String rawBonusNumber = inputView.getBonusNumbers();
                 int bonusNumber = inputValidator.validateBonusNumber(rawBonusNumber);
                 return new BonusNumber(bonusNumber, winningNumbers);
             } catch (IllegalArgumentException e) {
