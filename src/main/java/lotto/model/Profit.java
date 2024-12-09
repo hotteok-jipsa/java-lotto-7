@@ -11,6 +11,10 @@ public class Profit {
         profit = getProfit(results.getResults());
     }
 
+    public double getProfitRate(PurchaseAmount purchaseAmount) {
+        return (double)profit / purchaseAmount.getPurchaseAmount();
+    }
+
     private long getProfit(Map<Result, Integer> results) {
         long tempProfit = 0;
         for(Entry<Result, Integer> entry : results.entrySet()) {
