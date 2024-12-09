@@ -48,6 +48,10 @@ public class OutputView {
         System.out.printf(PROFIT_RATE_MESSAGE_FORM, profitRate);
     }
 
+    public void printExceptionMessage(Exception e) {
+        System.out.println(e.getMessage());
+    }
+
     private void printSecondRankWinningResult(Result result, int count) {
         System.out.printf(SECOND_RANK_WINNING_RESULT_MESSAGE_FORM, result.winningNumber, result.reward, count);
     }
