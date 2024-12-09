@@ -1,5 +1,6 @@
 package lotto.validator;
 
+import static lotto.ExceptionMessage.BONUS_NUMBER_NOT_NUMBER_EXCEPTION;
 import static lotto.ExceptionMessage.PURCHASE_AMOUNT_NOT_NUMBER_EXCEPTION;
 import static lotto.ExceptionMessage.WINNING_NUMBERS_NOT_NUMBER_EXCEPTION;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
@@ -25,4 +26,12 @@ public class InputValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(WINNING_NUMBERS_NOT_NUMBER_EXCEPTION.message);
     }
+
+    @Test
+    void 보너스_번호가_숫자타입이_아니라면_예외를_발생시킨다() {
+        assertThatThrownBy(() -> inputValidator.validateBonusNumber("5번"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(BONUS_NUMBER_NOT_NUMBER_EXCEPTION.message);
+    }
+
 }

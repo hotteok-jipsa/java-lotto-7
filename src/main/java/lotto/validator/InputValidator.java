@@ -1,5 +1,6 @@
 package lotto.validator;
 
+import static lotto.ExceptionMessage.BONUS_NUMBER_NOT_NUMBER_EXCEPTION;
 import static lotto.ExceptionMessage.PURCHASE_AMOUNT_NOT_NUMBER_EXCEPTION;
 import static lotto.ExceptionMessage.WINNING_NUMBERS_NOT_NUMBER_EXCEPTION;
 
@@ -25,6 +26,13 @@ public class InputValidator {
             winningNumbersList.add(Integer.parseInt(rawWinningNumber));
         }
         return winningNumbersList;
+    }
+
+    public int validateBonusNumber(String bonusNumber) {
+        if (!bonusNumber.matches("^[0-9]*$")) {
+            throw new IllegalArgumentException(BONUS_NUMBER_NOT_NUMBER_EXCEPTION.message);
+        }
+        return Integer.parseInt(bonusNumber);
     }
 
     private void validateWinningNumberIsNumber(String winningNumber) {
