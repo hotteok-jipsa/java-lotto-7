@@ -9,8 +9,8 @@ public class PurchasedLottos {
 
     private final List<Lotto> purchasedLottos = new ArrayList<>();
 
-    public PurchasedLottos(int purchaseAmount) {
-        for(int amount = 0; amount < purchaseAmount; amount ++) {
+    public PurchasedLottos(int purchaseCount) {
+        for(int amount = 0; amount < purchaseCount; amount ++) {
             Lotto newLotto = new Lotto(generateLotto());
             purchasedLottos.add(newLotto);
         }

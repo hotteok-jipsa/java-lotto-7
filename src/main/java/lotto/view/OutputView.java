@@ -31,14 +31,14 @@ public class OutputView {
     }
 
     public void printWinningResults(EnumMap<Result, Integer> results) {
-        for (Entry<Result, Integer> result : results.entrySet()) {
-            if (result.getKey().equals(Result.FAIL)) {
+        for (Entry<Result, Integer> entry : results.entrySet()) {
+            if (entry.getKey().equals(Result.FAIL)) {
                 continue;
             }
-            if (result.getKey().equals(Result.SECOND)) {
-                printSecondRankWinningResult(result.getKey(), result.getValue());
+            if (entry.getKey().equals(Result.SECOND)) {
+                printSecondRankWinningResult(entry.getKey(), entry.getValue());
             }
-            printWinningResult(result.getKey(), result.getValue());
+            printWinningResult(entry.getKey(), entry.getValue());
         }
     }
 

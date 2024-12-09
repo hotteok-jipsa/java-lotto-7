@@ -13,6 +13,10 @@ public class PurchaseAmount {
         this.purchaseAmount = purchaseAmount;
     }
 
+    public long getPurchaseAmount() {
+        return purchaseAmount;
+    }
+
     private void validatePurchaseAmount(long purchaseAmount) {
         if(purchaseAmount % PURCHASE_AMOUNT_UNIT != 0) {
             throw new IllegalArgumentException(PURCHASE_AMOUNT_INVALID_EXCEPTION.message);
