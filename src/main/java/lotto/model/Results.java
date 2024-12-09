@@ -1,6 +1,5 @@
 package lotto.model;
 
-import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import lotto.dto.LottoDto;
@@ -14,6 +13,9 @@ public class Results {
     public Results(final WinningNumbers winningNumbers, final BonusNumber bonusNumber) {
         this.winningNumbers = winningNumbers.getWinningNumbers();
         this.bonusNumber = bonusNumber.getBonusNumber();
+        for(Result result : Result.values()) {
+            results.put(result, 0);
+        }
     }
 
     public void calculateResults(PurchasedLottos purchasedLottos) {
@@ -31,7 +33,7 @@ public class Results {
                 getWinningNumberDuplicate(lottoNumbers),
                 getBonusNumberFlag(lottoNumbers)
         );
-        results.put(result, results.getOrDefault(result, -1) +1);
+        results.put(result, results.get(result) + 1);
     }
 
     private int getWinningNumberDuplicate(List<Integer> lottoNumbers) {
@@ -46,7 +48,7 @@ public class Results {
 
     private boolean getBonusNumberFlag(List<Integer> lottoNumbers) {
         for (int number : lottoNumbers) {
-            if(bonusNumber == number) {
+            if (bonusNumber == number) {
                 return true;
             }
         }
